@@ -1,134 +1,473 @@
 /*Courtney Hill
 CSC 414
 Stubbing Assignment
-Create a menu with at least 10 items: include error message, implementation message, and reprint of menu until exit condition is meet.  
+Create a menu with at least 10 items: include error message, implementation message, and reprint of menu until exit condition is meet.
 This is a program of a cafe that will continue to display the menu.  Once the exit condition is met it will display a message and the total amount owed
 by the "customer" */
-package menuproject;
+//package menuproject;
 
 import java.util.Scanner;
 
 public class MenuProject {
 
-    
+
     public static void main(String[] args) {
         //initialized variables for current use and future usage.
-        int choice = -1;
+        String choice = "";
         Scanner input = new Scanner(System.in);
         String size = " ";
         int drinkQuantity = 0;
         double totalPrice = 0.0;
         double drinkTotal = 0;
-        
-        
-      while(choice != 0)
+
+
+//while loop to display menu exit if character is 0
+        while(!(choice.equals("0")))
         {
-        //menu display
-        System.out.println("Coco's Cafe");
-        System.out.println("Press 1: Water");
-        
-        System.out.println("Press 2: Tea");
-       
-        System.out.println("Press 3: Milk");
-        
-        System.out.println("Press 4: Lemonade");
-        
-        System.out.println("Press 5: Latte");
-       
-        System.out.println("Press 6: Mocha");
-        
-        System.out.println("Press 7: Iced Coffee");
-        
-        System.out.println("Press 8: Granita");
-        
-        System.out.println("Press 9: Coffee");
-        
-        System.out.println("Press 10: Chai Tea");
-        
-        System.out.println("Press 0 to Exit and get Total ");
-        choice = input.nextInt();
-            //while loop that checks the choice of the user
-      
+            //menu display
+            System.out.println("Coco's Cafe");
+            System.out.println("Press 1: Water");
+
+            System.out.println("Press 2: Tea");
+
+            System.out.println("Press 3: Milk");
+
+            System.out.println("Press 4: Lemonade");
+
+            System.out.println("Press 5: Latte");
+
+            System.out.println("Press 6: Mocha");
+
+            System.out.println("Press 7: Iced Coffee");
+
+            System.out.println("Press 8: Granita");
+
+            System.out.println("Press 9: Coffee");
+
+            System.out.println("Press 10: Chai Tea");
+
+            System.out.println("Press 0 to Exit and get Total ");
+            choice = input.next();
+
+
             //switch case for choice that was chosen
+            //displays size options and price
             switch(choice){
-                case 1:
-                    
-                    System.out.println("You have selected water but this product is Not Implemented");
-                   break;
-                                
-                case 2:
-                    System.out.println("You have selected tea but this product is Not Implemented");
-                    System.out.println("Size and total not avaliable");
-                   break;
-                case 3:
-                   System.out.println("You have selected milk but this product is Not Implemented");
-                   System.out.println("Size and total not avaliable");
-                   break;
-                case 4:
-                   System.out.println("You have selected lemonade but this product is Not Implemented");
-                   break;
-                case 5:
-                   System.out.println("You have selected latte but this product is Not Implemented");
-                   System.out.println("Size and total not avaliable");
-                   break;
-                case 6:
-                   System.out.println("You have selected mocha but this product is Not Implemented");
-                   System.out.println("Size and total not avaliable");
-                   break;
-                case 7:
-                    System.out.println("You have selected iced coffe but this product is Not Implemented");
-                    System.out.println("Size and total not avaliable");
-                   break;
-                case 8:
-                    System.out.println("You have selected granita but this product is Not Implemented");
-                    System.out.println("Size and total not avaliable");
-                   break;
-                case 9:
-                    System.out.println("You have selected coffee but this product is Not Implemented");
-                    System.out.println("Size and total not avaliable");
-                   break;
-                case 10:
-                    System.out.println("You have selected chai tea but this product is Not Implemented");
-                    System.out.println("Size and total not avaliable");
-                            
-                   break;
+                case "0":
+                    //exit conditon
+                    break;
+                case "1":
+
+                    System.out.println("Water");
+                    System.out.println("What Size? ");
+                    System.out.println("Small: $0.00");
+                    System.out.println("Medium: $0.00");
+                    System.out.println("Large: $0.00");
+                    //get size
+                    size = input.next();
+                    //pass size and choice to get the price
+                    totalPrice += getPrice(choice, size);
+                    //break and display menue
+                    break;
+
+                case "2":
+                    System.out.println("Tea");
+                    System.out.println("What Size? ");
+                    System.out.println("Small: $2.00");
+                    System.out.println("Medium: $3.00");
+                    System.out.println("Large: $4.00");
+                    //get size
+                    size = input.next();
+                    //get total price pass choice and size characters
+                    totalPrice += getPrice(choice, size);
+
+                    break;
+                case "3":
+                    System.out.println("Milk");
+                    System.out.println("What Size? ");
+                    System.out.println("Small: $2.00");
+                    System.out.println("Medium: $3.00");
+                    System.out.println("Large: $4.00");
+                    //get size
+                    size = input.next();
+                    //get total price pass choice and size characters
+                    totalPrice += getPrice(choice, size);
+
+                    break;
+                case "4":
+                    System.out.println("Lemonade");
+                    System.out.println("What Size? ");
+                    System.out.println("Small: $3.00");
+                    System.out.println("Medium: $4.00");
+                    System.out.println("Large: $5.00");
+                    //get size
+                    size = input.next();
+                    //get total price pass choice and size characters
+                    totalPrice += getPrice(choice, size);
+
+                    break;
+                case "5":
+                    System.out.println("Latte");
+                    System.out.println("What Size? ");
+                    System.out.println("Small: $4.00");
+                    System.out.println("Medium: $5.00");
+                    System.out.println("Large: $6.00");
+                    //get size
+                    size = input.next();
+                    //get total price pass choice and size characters
+                    totalPrice += getPrice(choice, size);
+
+                    break;
+                case "6":
+                    System.out.println("Mocha");
+                    System.out.println("What Size? ");
+                    System.out.println("Small: $4.00");
+                    System.out.println("Medium: $5.00");
+                    System.out.println("Large: $6.00");
+                    //get size
+                    size = input.next();
+                    //get total price pass choice and size characters
+                    totalPrice += getPrice(choice, size);
+
+                    break;
+                case "7":
+                    System.out.println("Iced Coffee");
+                    System.out.println("What Size? ");
+                    System.out.println("Small: $4.00");
+                    System.out.println("Medium: $5.00");
+                    System.out.println("Large: $6.00");
+                    //get size
+                    size = input.next();
+                    //get total price pass choice and size characters
+                    totalPrice += getPrice(choice, size);
+
+                    break;
+                case "8":
+                    System.out.println("Granita");
+                    System.out.println("What Size? ");
+                    System.out.println("Small: $4.00");
+                    System.out.println("Medium: $5.00");
+                    System.out.println("Large: $6.00");
+                    //get size
+                    size = input.next();
+                    //get total price pass choice and size characters
+                    totalPrice += getPrice(choice, size);
+
+                    break;
+                case "9":
+                    System.out.println("Coffee");
+                    System.out.println("What Size? ");
+                    System.out.println("Small: $1.00");
+                    System.out.println("Medium: $2.00");
+                    System.out.println("Large: $3.00");
+                    //get size
+                    size = input.next();
+                    //get total price pass choice and size characters
+                    totalPrice += getPrice(choice, size);
+
+                    break;
+                case "10":
+                    System.out.println("Chai Tea");
+                    System.out.println("What Size? ");
+                    System.out.println("Small: $3.00");
+                    System.out.println("Medium: $4.00");
+                    System.out.println("Large: $5.00");
+                    //get size
+                    size = input.next();
+                    //get total price pass choice and size characters
+                    totalPrice += getPrice(choice, size);
+
+                    break;
                 default:
-                        System.out.println("Invalid option, please enter a value 0-10");
-                        break;
-                        
+                    //invalid input
+                    System.out.println("Invalid option, please enter a value 0-10");
+                    break;
+
             }
-            //reprint of menu after customer makes a choice.
-//        System.out.println("Coco's Cafe");
-//        System.out.println("Press 1: Water");
-//        
-//        System.out.println("Press 2: Tea");
-//        
-//        System.out.println("Press 3: Milk");
-//       
-//        System.out.println("Press 4: Lemonade");
-//        
-//        System.out.println("Press 5: Latte");
-//        
-//        System.out.println("Press 6: Mocha");
-//        
-//        System.out.println("Press 7: Iced Coffe");
-//        
-//        System.out.println("Press 8: Granita");
-//        
-//        System.out.println("Press 9: Coffee");
-//        
-//        System.out.println("Press 10: Chai Tea");
-//      
-//        
-//        System.out.println("Press 0 to Exit and get Total ");
-//        choice = input.nextInt();
-            
+
+
         }
-        
+        //display total price and exit message
+        System.out.printf("Total Price: $%.2f\n", totalPrice);
         System.out.println("Thank you for stopping by!!!");
     }
-   
-    
-}
 
+
+//function to get the price of each item chosen
+    public static double getPrice(String c, String s) {
+        int quantity = 0;
+        double total = 0.0;
+        Scanner input = new Scanner(System.in);
+//switch on character to get size and price
+        switch (c){
+            case "1":
+                if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
+                    System.out.println("How many");
+                    //get quantity
+                    quantity = input.nextInt();
+                    //multiple quantity by price to get total
+                    total = quantity * 0.00;
+                    System.out.printf("You ordered %d small Water(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    //return the total
+                    return total;
+                } else if (s.equalsIgnoreCase("m") || s.equalsIgnoreCase("medium")) {
+                    System.out.println("How many");
+                    //get quantity
+                    quantity = input.nextInt();
+                    total = quantity * 0.00;
+                    System.out.printf("You ordered %d medium Water(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                } else if (s.equalsIgnoreCase("l") || s.equalsIgnoreCase("large")) {
+                    System.out.println("How many");
+                    //get quantity
+                    quantity = input.nextInt();
+                    total = quantity * 0.00;
+                    System.out.printf("You ordered %d large Water(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                }
+
+            case "2":
+                //if to check string size and get the quantity
+                if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
+                    System.out.println("How many");
+                    //get quantity
+                    quantity = input.nextInt();
+                    //multiple quantity by price to get total
+                    total = quantity * 2.00;
+                    System.out.printf("You ordered %d small Tea(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    //return the total
+                    return total;
+                } else if (s.equalsIgnoreCase("m") || s.equalsIgnoreCase("medium")) {
+                    System.out.println("How many");
+                    //get quantity
+                    quantity = input.nextInt();
+                    total = quantity * 3.00;
+                    System.out.printf("You ordered %d medium Tea(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                } else if (s.equalsIgnoreCase("l") || s.equalsIgnoreCase("large")) {
+                    System.out.println("How many");
+                    //get quantity
+                    quantity = input.nextInt();
+                    total = quantity * 4.00;
+                    System.out.printf("You ordered %d large Tea(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                }
+            case "3":
+                //if to check string size and get the quantity
+                if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
+                    System.out.println("How many");
+                    quantity = input.nextInt();
+                    total = quantity * 2.00;
+                    System.out.printf("You ordered %d small Milk(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                } else if (s.equalsIgnoreCase("m") || s.equalsIgnoreCase("medium")) {
+                    System.out.println("How many");
+                    //get quantity
+                    quantity = input.nextInt();
+                    total = quantity * 3.00;
+                    System.out.printf("You ordered %d medium Milk(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                } else if (s.equalsIgnoreCase("l") || s.equalsIgnoreCase("large")) {
+                    System.out.println("How many");
+                    //get quantity
+                    quantity = input.nextInt();
+                    total = quantity * 4.00;
+                    System.out.printf("You ordered %d large Milk(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                }
+            case "4":
+                //if to check string size and get the quantity
+                if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
+                    System.out.println("How many");
+                    //get quantity
+                    quantity = input.nextInt();
+                    total = quantity * 3.00;
+                    System.out.printf("You ordered %d small Lemonade(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                } else if (s.equalsIgnoreCase("m") || s.equalsIgnoreCase("medium")) {
+                    System.out.println("How many");
+                    //get quantity
+                    quantity = input.nextInt();
+                    total = quantity * 4.00;
+                    System.out.printf("You ordered %d medium Lemonade(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                } else if (s.equalsIgnoreCase("l") || s.equalsIgnoreCase("large")) {
+                    System.out.println("How many");
+                    //get quantity
+                    quantity = input.nextInt();
+                    total = quantity * 5.00;
+                    System.out.printf("You ordered %d large Lemonade(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                }
+            case "5":
+                //if to check string size and get the quantity
+                if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
+                    System.out.println("How many");
+                    //get quantity
+                    quantity = input.nextInt();
+                    total = quantity * 4.00;
+                    System.out.printf("You ordered %d small Latte(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                } else if (s.equalsIgnoreCase("m") || s.equalsIgnoreCase("medium")) {
+                    System.out.println("How many");
+                    //get quantity
+                    quantity = input.nextInt();
+                    total = quantity * 5.00;
+                    System.out.printf("You ordered %d medium Latte(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                } else if (s.equalsIgnoreCase("l") || s.equalsIgnoreCase("large")) {
+                    System.out.println("How many");
+                    //get quantity
+                    quantity = input.nextInt();
+                    total = quantity * 6.00;
+                    System.out.printf("You ordered %d large Latte(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                }
+            case "6":
+                //if to check string size and get the quantity
+                if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
+                    System.out.println("How many");
+                    quantity = input.nextInt();
+                    total = quantity * 4.00;
+                    System.out.printf("You ordered %d small Mocha(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                } else if (s.equalsIgnoreCase("m") || s.equalsIgnoreCase("medium")) {
+                    System.out.println("How many");
+                    quantity = input.nextInt();
+                    total = quantity * 5.00;
+                    System.out.printf("You ordered %d medium Mocha(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                } else if (s.equalsIgnoreCase("l") || s.equalsIgnoreCase("large")) {
+                    System.out.println("How many");
+                    //get quantity
+                    quantity = input.nextInt();
+                    total = quantity * 6.00;
+                    System.out.printf("You ordered %d large Mocha(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                }
+            case "7":
+                //if to check string size and get the quantity
+                if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
+                    System.out.println("How many");
+                    quantity = input.nextInt();
+                    total = quantity * 4.00;
+                    System.out.printf("You ordered %d small Iced Coffee(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                } else if (s.equalsIgnoreCase("m") || s.equalsIgnoreCase("medium")) {
+                    System.out.println("How many");
+                    quantity = input.nextInt();
+                    total = quantity * 5.00;
+                    System.out.printf("You ordered %d medium Iced Coffee(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                } else if (s.equalsIgnoreCase("l") || s.equalsIgnoreCase("large")) {
+                    System.out.println("How many");
+                    quantity = input.nextInt();
+                    total = quantity * 6.00;
+                    System.out.printf("You ordered %d large Iced Coffee(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                }
+            case "8":
+                //if to check string size and get the quantity
+                if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
+                    System.out.println("How many");
+                    quantity = input.nextInt();
+                    total = quantity * 4.00;
+                    System.out.printf("You ordered %d small Granita(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                } else if (s.equalsIgnoreCase("m") || s.equalsIgnoreCase("medium")) {
+                    System.out.println("How many");
+                    quantity = input.nextInt();
+                    total = quantity * 5.00;
+                    System.out.printf("You ordered %d medium Granita(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                } else if (s.equalsIgnoreCase("l") || s.equalsIgnoreCase("large")) {
+                    System.out.println("How many");
+                    quantity = input.nextInt();
+                    total = quantity * 6.00;
+                    System.out.printf("You ordered %d large Granita(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                }
+            case "9":
+                //if to check string size and get the quantity
+                if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
+                    System.out.println("How many");
+                    quantity = input.nextInt();
+                    total = quantity * 1.00;
+                    System.out.printf("You ordered %d small Coffee(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                } else if (s.equalsIgnoreCase("m") || s.equalsIgnoreCase("medium")) {
+                    System.out.println("How many");
+                    quantity = input.nextInt();
+                    total = quantity * 2.00;
+                    System.out.printf("You ordered %d medium Coffee(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                } else if (s.equalsIgnoreCase("l") || s.equalsIgnoreCase("large")) {
+                    System.out.println("How many");
+                    quantity = input.nextInt();
+                    total = quantity * 3.00;
+                    System.out.printf("You ordered %d large Coffee(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                }
+            case "10":
+                //if to check string size and get the quantity
+                if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
+                    System.out.println("How many");
+                    quantity = input.nextInt();
+                    total = quantity * 3.00;
+                    System.out.printf("You ordered %d small Chai Tea(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                } else if (s.equalsIgnoreCase("m") || s.equalsIgnoreCase("medium")) {
+                    System.out.println("How many");
+                    quantity = input.nextInt();
+                    total = quantity * 4.00;
+                    System.out.printf("You ordered %d medium Chai Tea(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                } else if (s.equalsIgnoreCase("l") || s.equalsIgnoreCase("large")) {
+                    System.out.println("How many");
+                    quantity = input.nextInt();
+                    total = quantity * 5.00;
+                    System.out.printf("You ordered %d large Chai Tea(s)\n", quantity );
+                    System.out.printf("Total: $%.2f\n", total);
+                    return total;
+                }
+            default:
+                System.out.println("Invalid");
+                return 0;
+
+        }
+
+
+    }
+
+
+}
 
