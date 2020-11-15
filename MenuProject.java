@@ -227,7 +227,11 @@ public class MenuProject {
                     System.out.printf("You ordered %d large Water(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
                     return total;
+                }else{
+                    System.out.println("Invalid size option, try again");
+                    return 0;
                 }
+
 
             case "2":
                 //if to check string size and get the quantity
@@ -257,7 +261,11 @@ public class MenuProject {
                     System.out.printf("You ordered %d large Tea(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
                     return total;
+                }else{
+                    System.out.println("Invalid size option, try again");
+                    return 0;
                 }
+
             case "3":
                 //if to check string size and get the quantity
                 if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
@@ -283,7 +291,11 @@ public class MenuProject {
                     System.out.printf("You ordered %d large Milk(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
                     return total;
+                }else{
+                    System.out.println("Invalid size option, try again");
+                    return 0;
                 }
+
             case "4":
                 //if to check string size and get the quantity
                 if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
@@ -310,7 +322,11 @@ public class MenuProject {
                     System.out.printf("You ordered %d large Lemonade(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
                     return total;
+                }else{
+                    System.out.println("Invalid size option, try again");
+                    return 0;
                 }
+
             case "5":
                 //if to check string size and get the quantity
                 if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
@@ -337,7 +353,11 @@ public class MenuProject {
                     System.out.printf("You ordered %d large Latte(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
                     return total;
+                }else{
+                    System.out.println("Invalid size option, try again");
+                    return 0;
                 }
+
             case "6":
                 //if to check string size and get the quantity
                 if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
@@ -362,7 +382,11 @@ public class MenuProject {
                     System.out.printf("You ordered %d large Mocha(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
                     return total;
+                }else{
+                    System.out.println("Invalid size option, try again");
+                    return 0;
                 }
+
             case "7":
                 //if to check string size and get the quantity
                 if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
@@ -386,7 +410,11 @@ public class MenuProject {
                     System.out.printf("You ordered %d large Iced Coffee(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
                     return total;
+                }else{
+                    System.out.println("Invalid size option, try again");
+                    return 0;
                 }
+
             case "8":
                 //if to check string size and get the quantity
                 if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
@@ -410,7 +438,11 @@ public class MenuProject {
                     System.out.printf("You ordered %d large Granita(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
                     return total;
+                }else{
+                    System.out.println("Invalid size option, try again");
+                    return 0;
                 }
+
             case "9":
                 //if to check string size and get the quantity
                 if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
@@ -434,7 +466,11 @@ public class MenuProject {
                     System.out.printf("You ordered %d large Coffee(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
                     return total;
+                }else{
+                    System.out.println("Invalid size option, try again");
+                    return 0;
                 }
+
             case "10":
                 //if to check string size and get the quantity
                 if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
@@ -458,7 +494,11 @@ public class MenuProject {
                     System.out.printf("You ordered %d large Chai Tea(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
                     return total;
+                }else{
+                    System.out.println("Invalid size option, try again");
+                    return 0;
                 }
+
             default:
                 System.out.println("Invalid");
                 return 0;
