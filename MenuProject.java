@@ -198,13 +198,25 @@ public class MenuProject {
         int quantity = 0;
         double total = 0.0;
         Scanner input = new Scanner(System.in);
+        boolean acceptedValue = false;
 //switch on character to get size and price
         switch (c){
             case "1":
                 if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
-                    System.out.println("How many");
-                    //get quantity
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e){
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+
                     //multiple quantity by price to get total
                     total = quantity * 0.00;
                     System.out.printf("You ordered %d small Water(s)\n", quantity );
@@ -212,20 +224,41 @@ public class MenuProject {
                     //return the total
                     return total;
                 } else if (s.equalsIgnoreCase("m") || s.equalsIgnoreCase("medium")) {
-                    System.out.println("How many");
-                    //get quantity
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calculate price
                     total = quantity * 0.00;
                     System.out.printf("You ordered %d medium Water(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 } else if (s.equalsIgnoreCase("l") || s.equalsIgnoreCase("large")) {
-                    System.out.println("How many");
-                    //get quantity
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                        }catch (NumberFormatException e){
+                            System.out.println("Not a valid.");
+                        }
+                    }
+                    //calculate price
                     total = quantity * 0.00;
                     System.out.printf("You ordered %d large Water(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 }else{
                     System.out.println("Invalid size option, try again");
@@ -236,9 +269,19 @@ public class MenuProject {
             case "2":
                 //if to check string size and get the quantity
                 if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
-                    System.out.println("How many");
-                    //get quantity
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
                     //multiple quantity by price to get total
                     total = quantity * 2.00;
                     System.out.printf("You ordered %d small Tea(s)\n", quantity );
@@ -246,20 +289,45 @@ public class MenuProject {
                     //return the total
                     return total;
                 } else if (s.equalsIgnoreCase("m") || s.equalsIgnoreCase("medium")) {
-                    System.out.println("How many");
-                    //get quantity
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calculate price
                     total = quantity * 3.00;
                     System.out.printf("You ordered %d medium Tea(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 } else if (s.equalsIgnoreCase("l") || s.equalsIgnoreCase("large")) {
-                    System.out.println("How many");
-                    //get quantity
-                    quantity = input.nextInt();
+
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calculate price
                     total = quantity * 4.00;
                     System.out.printf("You ordered %d large Tea(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 }else{
                     System.out.println("Invalid size option, try again");
@@ -269,27 +337,64 @@ public class MenuProject {
             case "3":
                 //if to check string size and get the quantity
                 if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
-                    System.out.println("How many");
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calculate price
                     total = quantity * 2.00;
                     System.out.printf("You ordered %d small Milk(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 } else if (s.equalsIgnoreCase("m") || s.equalsIgnoreCase("medium")) {
-                    System.out.println("How many");
-                    //get quantity
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calculate prce
                     total = quantity * 3.00;
                     System.out.printf("You ordered %d medium Milk(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 } else if (s.equalsIgnoreCase("l") || s.equalsIgnoreCase("large")) {
-                    System.out.println("How many");
-                    //get quantity
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calculate price
                     total = quantity * 4.00;
                     System.out.printf("You ordered %d large Milk(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 }else{
                     System.out.println("Invalid size option, try again");
@@ -299,28 +404,64 @@ public class MenuProject {
             case "4":
                 //if to check string size and get the quantity
                 if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
-                    System.out.println("How many");
-                    //get quantity
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calculate price
                     total = quantity * 3.00;
                     System.out.printf("You ordered %d small Lemonade(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 } else if (s.equalsIgnoreCase("m") || s.equalsIgnoreCase("medium")) {
-                    System.out.println("How many");
-                    //get quantity
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calcuate price
                     total = quantity * 4.00;
                     System.out.printf("You ordered %d medium Lemonade(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 } else if (s.equalsIgnoreCase("l") || s.equalsIgnoreCase("large")) {
-                    System.out.println("How many");
-                    //get quantity
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calculate price
                     total = quantity * 5.00;
                     System.out.printf("You ordered %d large Lemonade(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 }else{
                     System.out.println("Invalid size option, try again");
@@ -330,28 +471,64 @@ public class MenuProject {
             case "5":
                 //if to check string size and get the quantity
                 if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
-                    System.out.println("How many");
-                    //get quantity
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calculate price
                     total = quantity * 4.00;
                     System.out.printf("You ordered %d small Latte(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 } else if (s.equalsIgnoreCase("m") || s.equalsIgnoreCase("medium")) {
-                    System.out.println("How many");
-                    //get quantity
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calculate price
                     total = quantity * 5.00;
                     System.out.printf("You ordered %d medium Latte(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //retrun
                     return total;
                 } else if (s.equalsIgnoreCase("l") || s.equalsIgnoreCase("large")) {
-                    System.out.println("How many");
-                    //get quantity
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calculate price
                     total = quantity * 6.00;
                     System.out.printf("You ordered %d large Latte(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 }else{
                     System.out.println("Invalid size option, try again");
@@ -361,26 +538,64 @@ public class MenuProject {
             case "6":
                 //if to check string size and get the quantity
                 if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
-                    System.out.println("How many");
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calculate price
                     total = quantity * 4.00;
                     System.out.printf("You ordered %d small Mocha(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 } else if (s.equalsIgnoreCase("m") || s.equalsIgnoreCase("medium")) {
-                    System.out.println("How many");
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calculate price
                     total = quantity * 5.00;
                     System.out.printf("You ordered %d medium Mocha(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 } else if (s.equalsIgnoreCase("l") || s.equalsIgnoreCase("large")) {
-                    System.out.println("How many");
-                    //get quantity
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calculate price
                     total = quantity * 6.00;
                     System.out.printf("You ordered %d large Mocha(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 }else{
                     System.out.println("Invalid size option, try again");
@@ -390,25 +605,64 @@ public class MenuProject {
             case "7":
                 //if to check string size and get the quantity
                 if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
-                    System.out.println("How many");
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calculate price
                     total = quantity * 4.00;
                     System.out.printf("You ordered %d small Iced Coffee(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 } else if (s.equalsIgnoreCase("m") || s.equalsIgnoreCase("medium")) {
-                    System.out.println("How many");
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calculate price
                     total = quantity * 5.00;
                     System.out.printf("You ordered %d medium Iced Coffee(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 } else if (s.equalsIgnoreCase("l") || s.equalsIgnoreCase("large")) {
-                    System.out.println("How many");
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calculate price
                     total = quantity * 6.00;
                     System.out.printf("You ordered %d large Iced Coffee(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 }else{
                     System.out.println("Invalid size option, try again");
@@ -418,25 +672,64 @@ public class MenuProject {
             case "8":
                 //if to check string size and get the quantity
                 if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
-                    System.out.println("How many");
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calculate price
                     total = quantity * 4.00;
                     System.out.printf("You ordered %d small Granita(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 } else if (s.equalsIgnoreCase("m") || s.equalsIgnoreCase("medium")) {
-                    System.out.println("How many");
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calculate price
                     total = quantity * 5.00;
                     System.out.printf("You ordered %d medium Granita(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 } else if (s.equalsIgnoreCase("l") || s.equalsIgnoreCase("large")) {
-                    System.out.println("How many");
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calculate price
                     total = quantity * 6.00;
                     System.out.printf("You ordered %d large Granita(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 }else{
                     System.out.println("Invalid size option, try again");
@@ -446,25 +739,64 @@ public class MenuProject {
             case "9":
                 //if to check string size and get the quantity
                 if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
-                    System.out.println("How many");
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calculate price
                     total = quantity * 1.00;
                     System.out.printf("You ordered %d small Coffee(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 } else if (s.equalsIgnoreCase("m") || s.equalsIgnoreCase("medium")) {
-                    System.out.println("How many");
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calculate
                     total = quantity * 2.00;
                     System.out.printf("You ordered %d medium Coffee(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 } else if (s.equalsIgnoreCase("l") || s.equalsIgnoreCase("large")) {
-                    System.out.println("How many");
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calculate price
                     total = quantity * 3.00;
                     System.out.printf("You ordered %d large Coffee(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 }else{
                     System.out.println("Invalid size option, try again");
@@ -474,25 +806,64 @@ public class MenuProject {
             case "10":
                 //if to check string size and get the quantity
                 if (s.equalsIgnoreCase("s") || s.equalsIgnoreCase("small")) {
-                    System.out.println("How many");
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calcualte price
                     total = quantity * 3.00;
                     System.out.printf("You ordered %d small Chai Tea(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 } else if (s.equalsIgnoreCase("m") || s.equalsIgnoreCase("medium")) {
-                    System.out.println("How many");
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calculate price
                     total = quantity * 4.00;
                     System.out.printf("You ordered %d medium Chai Tea(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 } else if (s.equalsIgnoreCase("l") || s.equalsIgnoreCase("large")) {
-                    System.out.println("How many");
-                    quantity = input.nextInt();
+                    //get quantity and check to make sure it is a valid number
+                    while(!acceptedValue){
+                        try{
+                            System.out.println("How many drinks: ");
+                            //convert input to integer
+                            quantity = Integer.valueOf(input.nextLine());
+                            acceptedValue = true;
+                            //exception if value is not a number
+                        }catch (NumberFormatException e) {
+                            //error message
+                            System.out.println("Not a valid quantity.");
+                        }
+                    }
+                    //calculate price
                     total = quantity * 5.00;
                     System.out.printf("You ordered %d large Chai Tea(s)\n", quantity );
                     System.out.printf("Total: $%.2f\n", total);
+                    //return
                     return total;
                 }else{
                     System.out.println("Invalid size option, try again");
